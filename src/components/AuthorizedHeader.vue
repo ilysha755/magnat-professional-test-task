@@ -45,6 +45,10 @@ header{
     padding: 10px;
 }
 .logo {
+    margin-right: 20px;
+    img{
+        width: 100%;
+    }
 }
 .search {
     max-width: 563px;
@@ -113,4 +117,17 @@ header{
         border-radius:15px;
     }
 }
+@media screen and (max-width:1369px) {
+        .location{
+            p{
+                display: none;
+            }
+        }
+}
+@media screen and (max-width:1129px) {
+    .search,.location,.lang,.view{
+        display: none;
+    }
+}
+
 </style>

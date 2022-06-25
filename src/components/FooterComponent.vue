@@ -6,7 +6,7 @@
                     <img src="../assets/svg/AuthorizedHeader.svg" alt="">
                     <p>RT360.RU – это возможность увидеть памятные места, музеи, императорские дворцы, театры, древние и современные города, храмовые комплексы и уникальные природные достопримечательности многонациональной и такой разной России.</p>
                 </div>
-                <hr>
+
                 <div class="footer-nav">
                     <div class="main-links">
                         <p>Основное</p>
@@ -28,9 +28,10 @@
                     </div>
                     <div class="social-links">
                         <p>Соц сети</p>
-                        
+                        <div class="social__icons">
                         <a href="#"><img src="../assets/svg/fb.svg" alt=""></a>
                         <a href="#"><img src="../assets/svg/dzen.svg" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,6 +67,10 @@ footer{
 .footer-top {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #818DA4;
+    border-bottom: 1px solid #818DA4;
+    padding-top: 63px;
+    padding-bottom: 64px;
 }
 .footer-text {
     img{
@@ -73,6 +78,10 @@ footer{
     }
     p{
         max-width: 584px;
+        color:#818DA4;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
     }
 }
 .footer-nav {
@@ -80,17 +89,30 @@ footer{
     width: 100%;
     display: flex;
     justify-content: space-between;
-  
+    position: relative;
+     &::before {
+        content: "";
+        position: absolute;
+        left: -40%;
+        top: 50%;
+        width: 67%;
+        height: 1px;
+        background-color: #818DA4;
+        transform: rotate(90deg);
+      }
 }
 .main-links {
       display: flex;  
       flex-direction: column;
+      margin-left: 20px;
+      position: relative;
       p{
         color:#818DA4;
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
         margin-bottom: 24px;
       }
+   
 }
 .footer-links {
     font-family: 'Roboto', sans-serif;
@@ -110,7 +132,12 @@ footer{
     }
 }
 .social-links {
-
+p{
+       color:#818DA4;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 24px;
+}
 }
 .footer-bottom {
     display: flex;
@@ -122,6 +149,13 @@ footer{
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
+.social__icons{
+    margin-left: -8px;
+    display: flex;
+    :nth-child(2){
+        margin-top: 2px;
+    }
+}
 .contacts {   
    
     a{
@@ -132,6 +166,52 @@ footer{
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
      
+    }
+}
+@media screen and (max-width: 1331px) {
+    .footer__container{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1276px) {
+    .footer-nav {
+
+     &::before {
+        display: none;
+      }
+}
+}
+@media screen and (max-width: 943px) {
+    .footer-top{
+        flex-direction: column;
+    }
+    .footer-text{
+        margin-bottom: 20px;
+    }
+    .footer-nav{
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    .social-links{
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width: 427px) {
+    .footer-nav{
+        flex-direction:column;
+    }
+      .about-links{
+        margin-left: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .footer-bottom{
+        flex-direction: column;
+        p{
+            margin-bottom: 20px;
+            text-align: end;
+        }
     }
 }
 </style>
